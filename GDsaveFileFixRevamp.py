@@ -15,6 +15,7 @@ __version__ = '0.1 ALPHA'
 SAVEFILE_NAME = ['CCGameManager.dat', 'CCLocalLevels.dat', 'CCGameManager2.dat', 'CCLocalLevels2.dat']
 SAVEFILE_PATH = Path(os.getenv('LocalAppData')) / 'GeometryDash'
 
+print("This fork is very early in development, so bugs may come up. One were trying to fix is not being able tto backup save files. At this moment, please back them up manualy")
 
 def main():
     print(dedent(
@@ -24,7 +25,7 @@ def main():
         (which is the game will only launch if you move the savefiles to other folders)
 
         If you encounter any problem (unable to fix / doesn't work after fixed),
-        feel free to create an issue or contact me on Discord (WEGFan#1440).
+        feel free to create an issue or contact me on Discord (amw_).
         """
     ))
 
@@ -40,7 +41,7 @@ def main():
         try:
             shutil.copyfile(savefile, Path(backup_folder_name, savefile))
         except Exception as err:
-            print(f'Failed to backup {savefile}!')
+            print(f'Failed to backup {savefile}! This *may* have deleted a few levels in your created levels folder!')
     print(f'Savefiles backed up to {SAVEFILE_PATH / backup_folder_name}')
     print()
 
