@@ -59,7 +59,7 @@ target/
 # =========================
 # Operating System Files
 # =========================
-
+# Does not support Linux at this time
 # OSX
 # =========================
 
