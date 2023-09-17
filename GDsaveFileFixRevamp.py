@@ -41,7 +41,6 @@ def main():
         try:
             shutil.copyfile(savefile, Path(backup_folder_name, savefile))
         except Exception as err:
-            print(f'Failed to backup {savefile}! This *may* have deleted a few levels in your created levels folder!')
     print(f'Savefiles backed up to {SAVEFILE_PATH / backup_folder_name}')
     print()
 
