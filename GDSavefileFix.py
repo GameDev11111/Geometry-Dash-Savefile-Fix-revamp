@@ -10,7 +10,7 @@ import zlib
 from textwrap import dedent
 from pathlib import Path
 
-__version__ = '1.1.1'
+__version__ = '0.1 ALPHA'
 
 SAVEFILE_NAME = ['CCGameManager.dat', 'CCLocalLevels.dat', 'CCGameManager2.dat', 'CCLocalLevels2.dat']
 SAVEFILE_PATH = Path(os.getenv('LocalAppData')) / 'GeometryDash'
@@ -19,8 +19,7 @@ SAVEFILE_PATH = Path(os.getenv('LocalAppData')) / 'GeometryDash'
 def main():
     print(dedent(
         f"""\
-        Geometry Dash Savefile Fix v{__version__} by WEGFan
-
+        Geometry Dash Savefile Fix v{__version__} by WEGFan- revamp by Skidder100
         This tool can fix most problems caused unable to open the game by the savefiles.
         (which is the game will only launch if you move the savefiles to other folders)
 
