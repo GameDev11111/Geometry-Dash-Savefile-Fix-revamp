@@ -98,4 +98,4 @@ if __name__ == '__main__':
         print('Error message:')
         traceback.print_exc()
 
-input('Prees ENNTER to exit')
+input('Prees ENTER to exit')
