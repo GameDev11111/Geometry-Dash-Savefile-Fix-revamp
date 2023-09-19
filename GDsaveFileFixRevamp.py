@@ -40,8 +40,8 @@ def main():
     for savefile in SAVEFILE_NAME:
         try:
             shutil.copyfile(savefile, Path(backup_folder_name, savefile))
-        except Exception as err:
-    print(f'Savefiles backed up to {SAVEFILE_PATH / backup_folder_name}')
+            except Exception as err:
+            print(f'Savefiles backed up to {SAVEFILE_PATH / backup_folder_name}')
     print()
 
     input('Press ENTER to fix...')
