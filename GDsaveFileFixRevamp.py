@@ -10,19 +10,19 @@ import zlib
 from textwrap import dedent
 from pathlib import Path
 
-__version__ = '0.1 ALPHA'
+__version__ = '0.2 ALPHA'
 
 SAVEFILE_NAME = ['CCGameManager.dat', 'CCLocalLevels.dat', 'CCGameManager2.dat', 'CCLocalLevels2.dat']
 SAVEFILE_PATH = Path(os.getenv('LocalAppData')) / 'GeometryDash'
 
-print("This fork is very early in development, so bugs may come up. One were trying to fix is not being able tto backup save files. At this moment, please back them up manualy")
+print("This fork is very early in development, so bugs may come up. One we're trying to fix is not being able to backup save files. At this moment, please back them up manually")
 
 def main():
     print(dedent(
         f"""\
         Geometry Dash Savefile Fix v{__version__} by WEGFan- revamp by Skidder100
-        This tool can fix most problems caused unable to open the game by the savefiles.
-        (which is the game will only launch if you move the savefiles to other folders)
+        This tool can fix most problems caused by unable to open the game due to save file issues.
+        (which means the game will only launch if you move the save files to other folders)
 
         If you encounter any problem (unable to fix / doesn't work after fixed),
         feel free to create an issue or contact me on Discord (amw_).
@@ -34,13 +34,13 @@ def main():
 
     os.chdir(SAVEFILE_PATH)
 
-    # backup original file
+    # backup original files
     backup_folder_name = f"backup_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}"
     os.mkdir(backup_folder_name)
     for savefile in SAVEFILE_NAME:
         try:
             shutil.copyfile(savefile, Path(backup_folder_name, savefile))
-            except Exception as err:
+        except Exception as err:
             print(f'Savefiles backed up to {SAVEFILE_PATH / backup_folder_name}')
     print()
 
@@ -59,7 +59,7 @@ def main():
             decoded_data = base64.b64decode(decrypted_data, altchars='-_')
             decompressed_data = zlib.decompress(decoded_data[10:], -zlib.MAX_WBITS)
 
-            # fix (i don't know why simply add spaces works...)
+            # fix (I don't know why simply adding spaces works...)
             decompressed_data = decompressed_data.replace(b'><', b'> <', 50)
 
             # encrypt
@@ -87,7 +87,6 @@ def main():
     print()
     input('Done! Press ENTER to exit...')
 
-
 if __name__ == '__main__':
     try:
         main()
@@ -98,4 +97,4 @@ if __name__ == '__main__':
         print('Error message:')
         traceback.print_exc()
 
-input('Prees ENTER to exit')
+input('Press ENTER to exit')
