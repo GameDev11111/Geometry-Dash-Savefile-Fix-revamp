@@ -97,3 +97,5 @@ if __name__ == '__main__':
         print('Oops, something went wrong...')
         print('Error message:')
         traceback.print_exc()
+
+input('Prees ENNTER to exit')
