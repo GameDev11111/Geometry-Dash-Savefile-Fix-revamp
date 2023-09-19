@@ -10,7 +10,7 @@ import zlib
 from textwrap import dedent
 from pathlib import Path
 
-__version__ = '0.2 ALPHA'
+__version__ = '0.1 ALPHA'
 
 SAVEFILE_NAME = ['CCGameManager.dat', 'CCLocalLevels.dat', 'CCGameManager2.dat', 'CCLocalLevels2.dat']
 SAVEFILE_PATH = Path(os.getenv('LocalAppData')) / 'GeometryDash'
@@ -41,7 +41,7 @@ def main():
         try:
             shutil.copyfile(savefile, Path(backup_folder_name, savefile))
         except Exception as err:
-            print(f'Savefiles backed up to {SAVEFILE_PATH / backup_folder_name}')
+            pass  # We don't need to print anything here
     print()
 
     input('Press ENTER to fix...')
