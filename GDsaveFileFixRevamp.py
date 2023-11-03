@@ -15,7 +15,7 @@ __version__ = '0.1 ALPHA'
 SAVEFILE_NAME = ['CCGameManager.dat', 'CCLocalLevels.dat', 'CCGameManager2.dat', 'CCLocalLevels2.dat']
 SAVEFILE_PATH = Path(os.getenv('LocalAppData')) / 'GeometryDash'
 
-print("This fork is very early in development, so bugs may come up. One we're trying to fix is not being able to backup save files. At this moment, please back them up manually")
+print("This fork is very early in development, so bugs may come up. At the moment we're trying to fix the program being able to backup save files. At this moment, please back them up manually")
 
 def main():
     print(dedent(
